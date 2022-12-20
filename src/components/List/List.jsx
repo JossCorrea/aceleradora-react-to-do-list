@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FiTrash2, FiPlus } from 'react-icons/fi'
 import '../List/list.styles.css'
 
@@ -6,6 +6,13 @@ import '../List/list.styles.css'
 const List = () => {
   const [list, setList] = useState([])
   const [newTask, setNewTask] = useState('')
+  const [valor, setValor] = useState("Aceleradora é demais")
+
+  useEffect(()=>{
+    console.log('Montei o componente')
+
+  },[valor])
+
 
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
@@ -23,12 +30,16 @@ const List = () => {
     setNewTask('')
   }
 
+  const handleClick = () => {setValor('Feliz natal!!!')}
+
   return (
     <section className="list">
+      <h1>{valor}</h1>
+      <button onClick={handleClick}> Mudar </button>
       <header>
         <h2>Tarefas a fazer:</h2>
 
-        <div className="input-container">
+        <div className="input-container"> 
           <input 
             type="text" 
             placeholder="Adicionar nova tarefa" 
