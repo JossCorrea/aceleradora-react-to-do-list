@@ -8,7 +8,6 @@ function App() {
     <div className="App">
       <Header />
       <Mensagem conteudo="Uhull"/>
-      <Mensagem conteudo="Esse projeto é massa!"/>
       <List />
     </div>
   );
